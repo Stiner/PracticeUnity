@@ -1,0 +1,17 @@
+{
+    "name": "MyPractice.VirtualCamera",
+    "rootNamespace": "MyPractice.VirtualCamera",
+    "references": [
+        "Cinemachine",
+        "com.unity.cinemachine.Editor"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

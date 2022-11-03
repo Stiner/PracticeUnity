@@ -1,0 +1,14 @@
+{
+    "name": "MyPractice.MaterialPropertyBlock",
+    "rootNamespace": "MyPractice.MaterialPropertyBlock",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
