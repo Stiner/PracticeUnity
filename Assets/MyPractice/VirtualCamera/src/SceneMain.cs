@@ -2,7 +2,7 @@ namespace MyPractice.VirtualCamera
 {
     using System.Collections;
     using UnityEngine;
-    using Cinemachine;
+    using Unity.Cinemachine;
 
     public class SceneMain : MonoBehaviour
     {
@@ -30,7 +30,7 @@ namespace MyPractice.VirtualCamera
                 {
                     var mixerCam = m_arrVirtualCam[i] as CinemachineMixingCamera;
 
-                    for (int j = 0; j < mixerCam.ChildCameras.Length; ++j)
+                    for (int j = 0; j < mixerCam.ChildCameras.Count; ++j)
                     {
                         var childMixerCam = mixerCam.ChildCameras[j];
                         childMixerCam.Priority = DefaultPriority;
