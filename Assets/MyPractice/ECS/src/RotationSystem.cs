@@ -4,12 +4,15 @@ using Unity.Transforms;
 
 namespace MyPractice.ECS
 {
-    public partial struct RotationSystem : ISystem
+    [BurstCompile]
+    partial struct RotationSystem : ISystem
     {
-        [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
-            state.RequireForUpdate<RotationSpeedComponent>();
+        }
+
+        public void OnDestroy(ref SystemState state)
+        {
         }
 
         [BurstCompile]
@@ -17,16 +20,16 @@ namespace MyPractice.ECS
         {
             float deltaTime = SystemAPI.Time.DeltaTime;
 
-            foreach (var (localTransform, speed) in SystemAPI.Query<RefRW<LocalTransform> , RefRO<RotationSpeedComponent>>())
-            {
-                float radianSpeed = speed.ValueRO.RadianPerSecond;
-                localTransform.ValueRW = localTransform.ValueRO.RotateY(radianSpeed * deltaTime);
-            }
-        }
+            //foreach (var (localTransform, speed) in SystemAPI.Query<RefRW<LocalTransform> , RefRO<RotationSpeed>>())
+            //{
+            //    float radianSpeed = speed.ValueRO.RadianPerSecond;
+            //    localTransform.ValueRW = localTransform.ValueRO.RotateY(radianSpeed * deltaTime);
+            //}
 
-        [BurstCompile]
-        public void OnDestroy(ref SystemState state)
-        {
+            foreach (var comp in SystemAPI.Query<MyRotationAspect>())
+            {
+                comp.Rotate(deltaTime);
+            }
         }
     }
 }

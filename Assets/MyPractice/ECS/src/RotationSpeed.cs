@@ -1,8 +1,9 @@
 using Unity.Entities;
+using Unity.Transforms;
 
 namespace MyPractice.ECS
 {
-    public struct RotationSpeedComponent : IComponentData
+    struct RotationSpeed : IComponentData
     {
         public float RadianPerSecond;
     }

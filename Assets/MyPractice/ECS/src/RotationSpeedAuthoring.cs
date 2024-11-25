@@ -4,7 +4,7 @@ using Unity.Mathematics;
 
 namespace MyPractice.ECS
 {
-    public class RotationSpeedAuthoring : MonoBehaviour
+    class RotationSpeedAuthoring : MonoBehaviour
     {
         [SerializeField]
         protected float _DegreesPerSecond = 10.0f;
@@ -18,7 +18,7 @@ namespace MyPractice.ECS
         {
             Entity entity = GetEntity(TransformUsageFlags.Dynamic);
 
-            AddComponent(entity, new RotationSpeedComponent
+            AddComponent(entity, new RotationSpeed
             {
                 RadianPerSecond = math.radians(authoring.DegreesPerScond)
             });
